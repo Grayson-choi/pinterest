@@ -71,6 +71,8 @@ fabric.properties
 .idea/caches/build_file_checksums.ser
 basic/
 .env
+.idea/
+__pycache__/
 
 .vscode/*
 !.vscode/settings.json
@@ -81,3 +83,4 @@ basic/
 
 # Local History for Visual Studio Code
 .history/
+
