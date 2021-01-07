@@ -18,21 +18,26 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
-
+# reading .env file
 env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False)
 )
-# reading .env file
+
 environ.Env.read_env(
     env_file=os.path.join(BASE_DIR, '.env')
 )
+
+
+
 
 # False if not in os.environ
 DEBUG = env('DEBUG')
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('secret_key')
+# SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = env('SECRET_KEY')
+# print(env('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -67,7 +72,7 @@ ROOT_URLCONF = 'pinterest.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
